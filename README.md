@@ -61,7 +61,7 @@ setr LGF_Banking:debug "true"
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/c0dfcdac-ffb3-4759-9b82-66a6fb10b5a6" alt="Create Fake Card" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/367ba412-f15f-40bc-9ecb-a74fc9e4d0e5" alt="Create Fake Card" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/cb052811-d4d1-4ef3-97a8-a41767486bf2" alt="+ Society Found" width="300"/></td>
-    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/0b726d7a-bba0-4319-ad95-c4df43c031d4" alt="Manage Society Found" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/4b86ef38-e09c-4403-9264-f6cda3d41d95" alt="Manage Society Found" width="300"/></td>
   </tr>
 </table>
 
