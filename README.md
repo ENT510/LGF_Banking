@@ -18,6 +18,7 @@ setr LGF_Banking:debug "true"
 - Restart your server: For the changes to take effect, you need to restart your game server.
 
 ## Dependency
+
 - [OX INVENTORY](https://github.com/overextended/ox_inventory)
 - [OX TARGET](https://github.com/overextended/ox_target/tree/main)
 - [OX LIB](https://github.com/overextended/ox_lib)
@@ -41,64 +42,75 @@ setr LGF_Banking:debug "true"
 - [x] **QB**
 
 # Support Resources
+
 # Skill Check Support
+
 - Choose between `OX Lib` and [BL UI](https://github.com/Byte-Labs-Studio/bl_ui) for skill checks and configure multiple presets with various difficulty levels:
 
 - OX Lib: Implement skill checks efficiently using `OX Lib` robust functionality. Customize presets for different difficulty levels, including easy, normal, hard, and insane.
 
 - Integrate [BL UI](https://github.com/Byte-Labs-Studio/bl_ui) seamlessly into your server's user interface for enhanced functionality. Configure presets specifically for `Circle Progress` and `Progress` skill checks. Adjust `difficulty` levels to tailor the experience to your players' needs.
 
-
-
 # Framework/Core Configuration
 
 ## Features
 
 ### Multi Core Support
+
 - Supports: `lgf`, `esx`, `qb`
 
 ### Multi Notify System Support
+
 - Supports: `lgf`, `esx`, `qb`
 
 ### SQL Table Execution and Creation
+
 - Execute and create SQL table: `CB.RunSqlTable`
 
 ### Credit Card Configuration
-- **Credit Card Item**: 
+
+- **Credit Card Item**:
   - `CB.ItemCreditCard`
-- **Credit Card Purchase Price**: 
+- **Credit Card Purchase Price**:
   - `CB.PriceCreditCard`
-- **Fake Credit Card Item**: 
+- **Fake Credit Card Item**:
   - `CB.ItemFakeCreditCard`
 
 ### Progress Bar Type
+
 - Type: `CB.TypeProgressBar` (`circle` or `label`)
 
 ### Enable Blip for all ATMs
+
 - Enable: `CB.EnableAtmBlip`
 
 ### ATM Prop Models
+
 - Models: `CB.PropAtm`
 
 ### Bank Zones and Configuration
+
 - Zones: `CB.BankingZone`
 
 ### SkillCheck
-- **Difficulty Levels**: 
+
+- **Difficulty Levels**:
   - `easy`, `normal`, `hard`, `insane`
-- **SkillCheck Type**: 
+- **SkillCheck Type**:
   - `CB.SkillCheckType`
 
 ### Enable Camera for Ped
+
 - Enable: `CB.EnableCam`
 
 ### Fake Credit Card Configuration
+
 - Configuration: `CB.FakeCreditCard`
 - **Fake Credit Card Sellers**:
   - Position: `PedPosSell`
   - Model: `PedModelSell`
   - Scenario: `PedScenarioSell`
-  - Price: 
+  - Price:
     - Fake Card: `PriceFakeCard`
     - Hack Pin: `PriceHackPin`
   - SkillCheck: `SkillCheck`
@@ -109,13 +121,13 @@ setr LGF_Banking:debug "true"
     - Set Weight
 
 ### Hacking Features
+
 - **PIN Restoration**: Allows restoring the PIN if forgotten
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
 - All: `exports`
-**Server Side Exports**:
-
+  **Server Side Exports**:
 
 ```lua
 -- Create Fake Card With Params
@@ -126,12 +138,12 @@ exports.LGF_Banking:ChangePin(data)
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
-
 # Exports Usage
 
 ## Create Credit Card
 
 ## Using the `CreateCreditCard` exports
+
 The `CreateCreditCard` exports allows you to create a credit card in the game with customized metadata.
 
 ```lua
@@ -198,4 +210,3 @@ end)
 ```
 
 - This function allows you to easily update a player's PIN by specifying their `identifier` and the new `PIN`.
-
