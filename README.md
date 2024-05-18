@@ -6,6 +6,7 @@
 
 - Manage Society Funds
 - Manage Robbery Bank
+- CoolDown Robbery
 - Support ATMs
 - Create Fake Card with metadata
 - Hack Pin
