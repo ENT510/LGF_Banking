@@ -30,6 +30,10 @@ setr LGF_Banking:debug "true"
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/7b5cbcb9-fe60-4828-9d1e-1bdc43fa7560" alt="Manage Banking" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/fa70a893-f2d4-4d2e-91fc-84704820eeb9" alt="Pin Creation" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/666fce84-cb7f-4d6a-977d-a32d5fc9b1ba" alt="Create Fake Card" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/c0dfcdac-ffb3-4759-9b82-66a6fb10b5a6" alt="Create Fake Card" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/367ba412-f15f-40bc-9ecb-a74fc9e4d0e5" alt="Create Fake Card" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/cb052811-d4d1-4ef3-97a8-a41767486bf2" alt="+ Society Found" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/0b726d7a-bba0-4319-ad95-c4df43c031d4" alt="Manage Society Found" width="300"/></td>
   </tr>
 </table>
 
@@ -124,6 +128,68 @@ setr LGF_Banking:debug "true"
     - Choose Image
     - Manage Metadata
     - Set Weight
+
+### Dispatch Configuration
+
+- **Configuration**: `CB.UseDispatchInternal`
+  - **Use Dispatch Internal for Robbery**
+    - **Job**: `CB.DistPatchJob`
+      - Choice of MultiJob {'police', 'ambulance'}
+    - **Duration**: `DurationBlipDispatch`
+- **Configuration**: `CB.UseCustomDispatch`
+  - Get player `id`, `coordinates`, `job`
+  - Custom Dispatch:
+    - Return `playerId`, `coords`, `job`
+      
+    ```lua
+    CB.UseCustomDispatch = true
+    CB.CustomDistPatch = function(playerId, coords, job)
+        print(playerId, coords, job)
+    end
+    ```
+
+### Robbery Configuration
+
+- **Configuration**: `CB.BankingZone`
+  - **Zone for Starting the Robbery**: `RobberyZone`
+  - **Item Requested for Robbery**: `ItemRequestedRobbery`
+  - **Quantity of Item Requested for Robbery**: `QntItemRequested`
+  - **Robbery Drop Items**: `RobberyDrop`
+    - **Minimum and Maximum Quantity for Drop Items**
+      - Example:
+     ```lua
+        RobberyDrop = {
+            ['money'] = { min = 20, max = 50 },
+            ['water'] = { min = 4, max = 10 },
+        },
+    ```
+  - **Skill Check Configuration**: `SkillCheck`
+    - **Enable or Disable Skill Check**: `Enable`
+    - **Skill Check Difficulty**
+    - **Skill Check Type**
+
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
+## Bank Robbery Configuration
+
+`LGF_Banking` supports customizable bank robberies, enabling players to engage in heists with randomized loot items. You can adjust various aspects of bank robberies, including loot items, hacking challenges, and the dispatch system.
+
+### Initiating a Bank Robbery
+
+To initiate a bank robbery, players must interact with a designated object within the bank area. Once the robbery commences, players may encounter hacking challenges or other obstacles that they must overcome to succeed in the heist.
+
+### Robbery Loot Items
+
+You have the option to configure the loot items available to players during bank robberies. These items can be randomized to introduce variety and excitement to the robbery experience, offering players a chance to obtain different rewards each time they engage in a heist.
+
+### Dispatch System
+
+`LGF_Banking` provides two alternatives for handling robbery notifications: internal dispatch and custom dispatch.
+
+- **Internal Dispatch**: Automatically sends robbery notifications to all players, complete with blip and position indicators.
+
+- **Custom Dispatch**: Grants you the flexibility to customize how robbery notifications are managed, allowing for more control over the notification process. With custom dispatch, you can define specific actions or alerts triggered when a robbery occurs, such as notifying law enforcement or broadcasting messages to nearby players. This option offers a tailored approach to managing robbery events on your game server.
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
