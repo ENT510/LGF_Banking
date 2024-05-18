@@ -43,7 +43,7 @@ setr LGF_Banking:debug "true"
 
 # Support Resources
 
-# Skill Check Support
+### Skill Check Support
 
 - Choose between `OX Lib` and [BL UI](https://github.com/Byte-Labs-Studio/bl_ui) for skill checks and configure multiple presets with various difficulty levels:
 
@@ -53,12 +53,12 @@ setr LGF_Banking:debug "true"
 
 # Framework/Core Configuration
 
-## Features
+# Features
 
 ### Hacking Features
 
 - **PIN Restoration**: Allows restoring the PIN if forgotten
-- **Create Faje Card**: Allows Creating a fake card for interact with full RP situation
+- **Create Fake Card**: Create fake cards to find yourself in pure RP situations, manage every metadata value
 
 ### Multi Core Support
 
@@ -66,7 +66,7 @@ setr LGF_Banking:debug "true"
 
 ### Multi Notify System Support
 
-- Supports: `lgf`, `esx`, `qb`
+- Supports: `lgf`, `esx`, `qb`, `ox`
 
 ### SQL Table Execution and Creation
 
