@@ -126,6 +126,15 @@ setr LGF_Banking:debug "true"
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
+### Society Funds Management (Boss Exclusive)
+
+- **Feature**: Ability to manage society funds
+  - The feature enables the management of society funds, allowing actions such as `deposit` or `withdraw`.
+- **Access**: Restricted to boss roles within each framework
+  -  Restricted to boss roles within each framework, ensuring control and preventing misuse by limiting access to authorized personnel.
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
 - All: `exports`
   **Server Side Exports**:
 
