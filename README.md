@@ -1,5 +1,33 @@
 # LGF_Banking
 
+### Provide Functions
+
+# LGF_Banking
+
+- Manage Society Funds
+- Manage Robbery Bank
+- Support ATMs
+- Create Fake Card with metadata
+- Hack Pin
+- Dispatch Internal
+- Dispatch Custom
+- Support Multi-Core
+- Support Multi-Notification
+- SQL Table Execution and Creation
+- Credit Card Configuration
+- Progress Bar Type
+- Enable Blip for all ATMs
+- Bank Zones and Configuration
+- Enable Camera for Ped
+- Fake Credit Card Configuration
+- Skill Check Support
+- Initiating a Bank Robbery
+- Robbery Loot Items
+- Society Funds Management (Boss Exclusive)
+- Create Credit Card with metadata
+- Change PIN
+
+
 ## Configuratiom (Convars)
 
 To configure `LGF_Banking`, follow these steps:
