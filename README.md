@@ -148,7 +148,7 @@ exports.LGF_Banking:ChangePin(data)
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
-# Exports Usage
+# Exports Usage (Server Side)
 
 ## Create Credit Card
 
@@ -178,8 +178,6 @@ RegisterCommand('getCard', function(source, args)
     }
     exports.LGF_Banking:CreateCreditCard(source, metadata)
 end)
-
-or
 
 RegisterCommand('getCard2', function(source, args)
     exports.LGF_Banking:CreateCreditCard(source, {
