@@ -48,11 +48,91 @@ setr LGF_Banking:debug "true"
 
 - Integrate [BL UI](https://github.com/Byte-Labs-Studio/bl_ui) seamlessly into your server's user interface for enhanced functionality. Configure presets specifically for `Circle Progress` and `Progress` skill checks. Adjust `difficulty` levels to tailor the experience to your players' needs.
 
+
+
+# Framework/Core Configuration
+
+## Features
+
+### Multi Core Support
+- Supports: `lgf`, `esx`, `qb`
+
+### Multi Notify System Support
+- Supports: `lgf`, `esx`, `qb`
+
+### SQL Table Execution and Creation
+- Execute and create SQL table: `CB.RunSqlTable`
+
+### Credit Card Configuration
+- **Credit Card Item**: 
+  - `CB.ItemCreditCard`
+- **Credit Card Purchase Price**: 
+  - `CB.PriceCreditCard`
+- **Fake Credit Card Item**: 
+  - `CB.ItemFakeCreditCard`
+
+### Progress Bar Type
+- Type: `CB.TypeProgressBar` (`circle` or `label`)
+
+### Enable Blip for all ATMs
+- Enable: `CB.EnableAtmBlip`
+
+### ATM Prop Models
+- Models: `CB.PropAtm`
+
+### Bank Zones and Configuration
+- Zones: `CB.BankingZone`
+
+### SkillCheck
+- **Difficulty Levels**: 
+  - `easy`, `normal`, `hard`, `insane`
+- **SkillCheck Type**: 
+  - `CB.SkillCheckType`
+
+### Enable Camera for Ped
+- Enable: `CB.EnableCam`
+
+### Fake Credit Card Configuration
+- Configuration: `CB.FakeCreditCard`
+- **Fake Credit Card Sellers**:
+  - Position: `PedPosSell`
+  - Model: `PedModelSell`
+  - Scenario: `PedScenarioSell`
+  - Price: 
+    - Fake Card: `PriceFakeCard`
+    - Hack Pin: `PriceHackPin`
+  - SkillCheck: `SkillCheck`
+  - **Customization Options**:
+    - Choose Name
+    - Choose Image
+    - Manage Metadata
+    - Set Weight
+
+### Hacking Features
+- **PIN Restoration**: Allows restoring the PIN if forgotten
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
+- All: `exports`
+**Server Side Exports**:
+
+
+```lua
+-- Create Fake Card With Params
+exports.LGF_Banking:CreateCreditCard(source, metadata)
+-- Change Pin Directly
+exports.LGF_Banking:ChangePin(data)
+```
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
+
+# Exports Usage
+
 ## Create Credit Card
 
-### Using the `CreateCreditCard` Function
-
-The `CreateCreditCard` function allows you to create a credit card in the game with customized metadata.
+## Using the `CreateCreditCard` exports
+The `CreateCreditCard` exports allows you to create a credit card in the game with customized metadata.
 
 ```lua
 exports.LGF_Banking:CreateCreditCard(source, metadata)
@@ -94,9 +174,9 @@ end)
 
 - This format should be clearer and more structured for users to understand how to use your script.
 
-# Change PIN (Using the ChangePin Function)
+# Change PIN (Using the ChangePin exports)
 
-The `ChangePin` function allows you to change the PIN associated with a player's identifier.
+The `ChangePin` exports allows you to change the PIN associated with a player's identifier.
 
 ```lua
 exports.LGF_Banking:ChangePin(data)
@@ -118,5 +198,4 @@ end)
 ```
 
 - This function allows you to easily update a player's PIN by specifying their `identifier` and the new `PIN`.
-
 
