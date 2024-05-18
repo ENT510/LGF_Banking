@@ -55,6 +55,11 @@ setr LGF_Banking:debug "true"
 
 ## Features
 
+### Hacking Features
+
+- **PIN Restoration**: Allows restoring the PIN if forgotten
+- **Create Faje Card**: Allows Creating a fake card for interact with full RP situation
+
 ### Multi Core Support
 
 - Supports: `lgf`, `esx`, `qb`
@@ -119,10 +124,6 @@ setr LGF_Banking:debug "true"
     - Choose Image
     - Manage Metadata
     - Set Weight
-
-### Hacking Features
-
-- **PIN Restoration**: Allows restoring the PIN if forgotten
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
