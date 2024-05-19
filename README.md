@@ -252,7 +252,7 @@ In addition to the standard cooldown mechanism, `LGF_Banking` allows players to 
 return {
 	['credit_card'] = {
 		label = 'Credit Card',
-        weight = 50,
+                weight = 50,
 		stack = false,
 		description = 'A standard credit card used for transactions.'
 	},
