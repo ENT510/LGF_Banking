@@ -6,6 +6,7 @@
 - Manage Society Funds
 - Manage Robbery Bank
 - CoolDown Robbery
+- Shop for Tools
 - Support ATMs
 - Create Fake Card with metadata
 - Hacking Time for Robbery
@@ -93,7 +94,8 @@ setr LGF_Banking:debug "true"
 - **PIN Restoration**: Allows restoring the PIN if forgotten
 - **Create Fake Card**: Create fake cards to find yourself in pure RP situations, manage every metadata value
 - **TIME heist Restoration**: Optimize time and hack time restore for heists removing cooldown with hack tool
-
+- **Crafting Tools**: Create tools dedicated to robberies and hacking using the 3D printer
+- **Tools Shop**: Support Shop Items in ox to Buy Tool
   
 ### Multi Core Support
 
@@ -199,7 +201,9 @@ setr LGF_Banking:debug "true"
     - **Skill Check Difficulty**
     - **Skill Check Type**
   - **Hacking Provide**
-    - Optimize time and hack time restore for heists removing cooldown with `hack tool `
+    - Optimize time and hack time restore for heists removing cooldown with `hack tool`
+    - Make tools to rob or hack with `3d printer tool`
+
 
 
 <hr style="border-radius: 50%; margin: 0 25px;">
@@ -252,7 +256,7 @@ In addition to the standard cooldown mechanism, `LGF_Banking` allows players to 
 return {
 	['credit_card'] = {
 		label = 'Credit Card',
-                weight = 50,
+		weight = 40,
 		stack = false,
 		description = 'A standard credit card used for transactions.'
 	},
@@ -271,6 +275,17 @@ return {
 		description = 'A tool used to reduce the cooldown of hacking attempts.',
 		client = {
 			export = 'LGF_Banking.ToolRemoveCoolDown',
+		}
+	},
+	['tool_3dprint'] = {
+		label = 'Printer 3D',
+		weight = 1,
+		stack = false,
+		degrade = 5,
+		decay = true,
+		description = 'A Printer 3D for crafting Tools.',
+		client = {
+			export = 'LGF_Banking.ToolCraftingItems',
 		}
 	}
 }
