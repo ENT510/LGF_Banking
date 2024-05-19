@@ -6,6 +6,7 @@
 - Manage Society Funds
 - Manage Robbery Bank
 - CoolDown Robbery
+- 3D Printer with Prop (by bzz)
 - Shop for Tools
 - Support ATMs
 - Create Fake Card with metadata
@@ -203,7 +204,34 @@ setr LGF_Banking:debug "true"
   - **Hacking Provide**
     - Optimize time and hack time restore for heists removing cooldown with `hack tool`
     - Make tools to rob or hack with `3d printer tool`
+   
 
+### Printer Configuration
+
+
+  - **3D Printer Configuration**: `CB.CraftingPrinter`
+    - Label
+      - (Label in 3D printer menu)
+    - itemHash
+      - (Hash Items)
+    - itemRequested
+      - (Item requested for Craft Tool or Weapon)
+    - ItemRequestedQnt
+      - (Quantity requested for Craft Tool or Weapon)
+    - Description
+      - (Provide Description in menu)
+    - CraftingTime
+      - (Crafting Time with Progress Bar)
+    - propHash
+      - (Hash Prop for Create object in 3D Printer (PropObject)[https://gtahash.ru/])
+        - Minimum and Maximum Quantity for Craft Tools
+              - Example:
+```lua
+   CB.CraftingPrinter = {
+    { Label = 'Weapon Pistol',  itemHash = 'WEAPON_PISTOL',       ItemRequestedPrint = 'water', ItemRequestedQnt = 3, Description = 'A standard issue pistol with moderate damage and accuracy.', CraftingTime = 20, propHash = 'w_pi_pistol' },
+    { Label = 'Carabine Rifle', itemHash = 'WEAPON_CARBINERIFLE', ItemRequestedPrint = 'water', ItemRequestedQnt = 5, Description = 'A submachine gun with high fire rate and decent damage.',    CraftingTime = 20, propHash = 'w_ar_carbinerifle' }
+}
+```
 
 
 <hr style="border-radius: 50%; margin: 0 25px;">
