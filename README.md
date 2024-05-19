@@ -61,12 +61,19 @@ setr LGF_Banking:debug "true"
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/7b5cbcb9-fe60-4828-9d1e-1bdc43fa7560" alt="Manage Banking" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/fa70a893-f2d4-4d2e-91fc-84704820eeb9" alt="Pin Creation" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/666fce84-cb7f-4d6a-977d-a32d5fc9b1ba" alt="Create Fake Card" width="300"/></td>
+  </tr>
+  <tr>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/c0dfcdac-ffb3-4759-9b82-66a6fb10b5a6" alt="Create Fake Card" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/367ba412-f15f-40bc-9ecb-a74fc9e4d0e5" alt="Create Fake Card" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/cb052811-d4d1-4ef3-97a8-a41767486bf2" alt="+ Society Found" width="300"/></td>
+  </tr>
+  <tr>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/4b86ef38-e09c-4403-9264-f6cda3d41d95" alt="Manage Society Found" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/3b8903d3-1a8b-46c2-9975-1f0d920e1a79" alt="Manage Society Found" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/120e7115-8ff3-47a8-a227-3d7423398048" alt="Manage Society Found" width="300"/></td>
   </tr>
 </table>
+
 
 `LGF_Banking` is a comprehensive banking system designed for game servers, offering secure `PIN management`, customizable `credit card creation`, and seamless integration with popular frameworks like `LGF`, `ESX`, and `QB`. Enhance your server's financial interactions with real-time updates and advanced features tailored for an immersive player experience.
 
@@ -146,6 +153,10 @@ setr LGF_Banking:debug "true"
 
 - Enable: `CB.EnableCam`
 
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
+
 ### Fake Credit Card Configuration
 
 - Configuration: `CB.FakeCreditCard`
@@ -162,6 +173,10 @@ setr LGF_Banking:debug "true"
     - Choose Image
     - Manage Metadata
     - Set Weight
+
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
 
 ### Dispatch Configuration
 
@@ -181,6 +196,10 @@ setr LGF_Banking:debug "true"
         print(playerId, coords, job)
     end
     ```
+
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
 
 ### Robbery Configuration
 
@@ -206,6 +225,9 @@ setr LGF_Banking:debug "true"
     - Make tools to rob or hack with `3d printer tool`
    
 
+<hr style="border-radius: 50%; margin: 0 25px;">
+
+
 ### Printer Configuration
 
 
@@ -223,7 +245,7 @@ setr LGF_Banking:debug "true"
     - CraftingTime
       - (Crafting Time with Progress Bar)
     - propHash
-      - (Hash Prop for Create object in 3D Printer (PropObject)[https://gtahash.ru/])
+      - (Hash Prop for Create object in 3D Printer. Prop Object: thttps://gtahash.ru/)
         - Minimum and Maximum Quantity for Craft Tools
               - Example:
 ```lua
