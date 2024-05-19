@@ -1,14 +1,14 @@
-# LGF_Banking
-
-### Provide Functions
 
 # LGF_Banking
+
+### Provide Functions:
 
 - Manage Society Funds
 - Manage Robbery Bank
 - CoolDown Robbery
 - Support ATMs
 - Create Fake Card with metadata
+- Hacking Time for Robbery
 - Hack Pin
 - Dispatch Internal
 - Dispatch Custom
@@ -92,7 +92,9 @@ setr LGF_Banking:debug "true"
 
 - **PIN Restoration**: Allows restoring the PIN if forgotten
 - **Create Fake Card**: Create fake cards to find yourself in pure RP situations, manage every metadata value
+- **TIME heist Restoration**: Optimize time and hack time restore for heists removing cooldown with hack tool
 
+  
 ### Multi Core Support
 
 - Supports: `lgf`, `esx`, `qb`
@@ -196,11 +198,13 @@ setr LGF_Banking:debug "true"
     - **Enable or Disable Skill Check**: `Enable`
     - **Skill Check Difficulty**
     - **Skill Check Type**
+  - **Hacking Provide**
+    - Optimize time and hack time restore for heists removing cooldown with `hack tool `
 
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
-## Bank Robbery Configuration
+# Bank Robbery Configuration
 
 `LGF_Banking` supports customizable bank robberies, enabling players to engage in heists with randomized loot items. You can adjust various aspects of bank robberies, including loot items, hacking challenges, and the dispatch system.
 
@@ -220,9 +224,13 @@ You have the option to configure the loot items available to players during bank
 
 - **Custom Dispatch**: Grants you the flexibility to customize how robbery notifications are managed, allowing for more control over the notification process. With custom dispatch, you can define specific actions or alerts triggered when a robbery occurs, such as notifying law enforcement or broadcasting messages to nearby players. This option offers a tailored approach to managing robbery events on your game server.
 
+### Hacktool Item for Cooldown Deviation
+
+In addition to the standard cooldown mechanism, `LGF_Banking` allows players to deviate the cooldown using a special hacktool item. When used, this item can bypass or reduce the cooldown period, providing players with more strategic options during bank heists.
+
 <hr style="border-radius: 50%; margin: 0 25px;">
 
-### Society Funds Management (Boss Exclusive)
+# Society Funds Management (Boss Exclusive)
 
 - **Feature**: Ability to manage society funds
   - The feature enables the management of society funds, allowing actions such as `deposit` or `withdraw`.
@@ -230,6 +238,46 @@ You have the option to configure the loot items available to players during bank
   -  Restricted to boss roles within each framework, ensuring control and preventing misuse by limiting access to authorized personnel.
 
 <hr style="border-radius: 50%; margin: 0 25px;">
+
+
+
+# Items Preconfigured
+
+## Register Item in Ox Inventory
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
+
+```lua
+return {
+	['credit_card'] = {
+		label = 'Credit Card',
+        weight = 50,
+		stack = false,
+		description = 'A standard credit card used for transactions.'
+	},
+	['fake_credit_card'] = {
+		label = 'Fake Credit Card',
+		weight = 0,
+		stack = false,
+		description = 'A counterfeit credit card, looks real but is fake.'
+	},
+	['tool_hack_cooldown'] = {
+		label = 'Cooldown Reduction',
+		weight = 1,
+		stack = false,
+		degrade = 15,
+		decay = true,
+		description = 'A tool used to reduce the cooldown of hacking attempts.',
+		client = {
+			export = 'LGF_Banking.ToolRemoveCoolDown',
+		}
+	}
+}
+```
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
 
 - All: `exports`
   **Server Side Exports**:
@@ -240,8 +288,6 @@ exports.LGF_Banking:CreateCreditCard(source, metadata)
 -- Change Pin Directly
 exports.LGF_Banking:ChangePin(data)
 ```
-
-<hr style="border-radius: 50%; margin: 0 25px;">
 
 # Exports Usage (Server Side)
 
