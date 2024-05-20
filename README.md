@@ -3,7 +3,6 @@
 
 ### Provide Functions:
 
-- Manage Society Funds
 - Manage Robbery Bank
 - CoolDown Robbery
 - 3D Printer with Prop (by bzz)
@@ -27,7 +26,6 @@
 - Initiating a Bank Robbery
 - Robbery Loot Items
 - Society Funds Management (Boss Exclusive)
-- Create Credit Card with metadata
 - Change PIN
 
 
