@@ -312,13 +312,20 @@ return {
 	},
 	['fake_credit_card'] = {
 		label = 'Fake Credit Card',
-		weight = 0,
+		weight = 40,
 		stack = false,
 		description = 'A counterfeit credit card, looks real but is fake.'
 	},
+	['battery_printer'] = {
+		label = 'Battery 3D Printer',
+		weight = 1000,
+		stack = true,
+		degrade = 60,
+		description = 'A battery for recharger a Printer 3D'
+	},
 	['tool_hack_cooldown'] = {
 		label = 'Cooldown Reduction',
-		weight = 1,
+		weight = 1000,
 		stack = false,
 		degrade = 15,
 		decay = true,
@@ -329,10 +336,8 @@ return {
 	},
 	['tool_3dprint'] = {
 		label = 'Printer 3D',
-		weight = 1,
+		weight = 3000,
 		stack = false,
-		degrade = 5,
-		decay = true,
 		description = 'A Printer 3D for crafting Tools.',
 		client = {
 			export = 'LGF_Banking.ToolCraftingItems',
