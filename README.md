@@ -231,6 +231,8 @@ setr LGF_Banking:debug "true"
 
 
   - **3D Printer Configuration**: `CB.CraftingPrinter`
+    - Weather System
+      - when there is rain the printer will have two more description options with the current weather, and if it rains it cannot be used, and a further option will be shown with a warning,
     - Label
       - (Label in 3D printer menu)
     - itemHash
