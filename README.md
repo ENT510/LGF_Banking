@@ -5,6 +5,7 @@
 
 - Manage Robbery Bank
 - CoolDown Robbery
+- NPC Robbery System
 - 3D Printer with Prop (by bzz)
 - Battery System for Printer
 - Shop for Tools
@@ -261,6 +262,32 @@ setr LGF_Banking:debug "true"
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
+### NPC Robbery System
+
+LGF_Banking now includes a feature for robbing NPCs, adding a dynamic and interactive element to your server. This allows players to engage in robbery scenarios with NPCs, providing rewards and consequences based on their actions.
+
+#### Key Features:
+- **Interactive Progress Bar**: A visible progress bar indicates the time required to complete the robbery.
+- **Distance Checks**: Ensures the player stays within a specific distance of the NPC during the robbery.
+- **NPC Reaction**: NPCs will react aggressively if the player gets too close or too far, creating a challenging and immersive experience.
+
+### Stealing NPC Configuration
+
+Customize the settings for the NPC robbery system to tailor the experience to your server's needs.
+
+- CardstealItem: Specify the item used for stealing from NPCs.
+- TimeStealing: Set the duration, in seconds, for completing the robbery.
+- DistanceCancelSteal: Define the distance, in meters, that triggers the cancellation of the robbery if the player moves away.
+- DistanceStartAngryorScaried: Determine the proximity, in meters, at which the player can trigger the NPC's aggressive or frightened reaction.
+- Price:
+  - **min**: Set the minimum value of the stolen loot.
+  - **max**: Set the maximum value of the stolen loot.
+
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
+
+
 # Bank Robbery Configuration
 
 `LGF_Banking` supports customizable bank robberies, enabling players to engage in heists with randomized loot items. You can adjust various aspects of bank robberies, including loot items, hacking challenges, and the dispatch system.
@@ -294,8 +321,8 @@ In addition to the standard cooldown mechanism, `LGF_Banking` allows players to 
 - **Access**: Restricted to boss roles within each framework
   -  Restricted to boss roles within each framework, ensuring control and preventing misuse by limiting access to authorized personnel.
 
-<hr style="border-radius: 50%; margin: 0 25px;">
 
+<hr style="border-radius: 50%; margin: 0 25px;">
 
 
 # Items Preconfigured
