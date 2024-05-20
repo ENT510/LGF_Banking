@@ -7,6 +7,7 @@
 - CoolDown Robbery
 - NPC Robbery System
 - 3D Printer with Prop (by bzz)
+- Place Printer with Raycast
 - Battery System for Printer
 - Shop for Tools
 - Support ATMs
@@ -70,7 +71,11 @@ setr LGF_Banking:debug "true"
   <tr>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/4b86ef38-e09c-4403-9264-f6cda3d41d95" alt="Manage Society Found" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/3b8903d3-1a8b-46c2-9975-1f0d920e1a79" alt="Manage Society Found" width="300"/></td>
-    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/120e7115-8ff3-47a8-a227-3d7423398048" alt="Manage Society Found" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/fe5a0a7e-9e0c-4eef-a4d4-15d207555bcc" alt="Manage Society Found" width="300"/></td>
+  </tr>
+   <tr>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/5d8f3ae7-8139-48f3-ba15-9719db144c64" alt="Manage Society Found" width="300"/></td>
+
   </tr>
 </table>
 
