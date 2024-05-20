@@ -6,6 +6,7 @@
 - Manage Robbery Bank
 - CoolDown Robbery
 - 3D Printer with Prop (by bzz)
+- Battery System for Printer
 - Shop for Tools
 - Support ATMs
 - Create Fake Card with metadata
@@ -245,6 +246,8 @@ setr LGF_Banking:debug "true"
     - propHash
       - (Hash Prop for Create object in 3D Printer. Prop Object: thttps://gtahash.ru/)
         - Minimum and Maximum Quantity for Craft Tools
+    - Battery
+        - Recharge the battery via item
               - Example:
 ```lua
    CB.CraftingPrinter = {
