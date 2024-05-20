@@ -41,8 +41,11 @@ Open your `server.cfg` file: This file is usually located in your server's root 
 Add the following lines to your `server.cfg` file: These settings allow you to set the language and enable debug mode for troubleshooting purposes.
 
 ```cfg
-setr LGF_Banking:traduction en
-setr LGF_Banking:debug "true"
+## Convars LGF Banking
+setr LGF_Banking:Traduction en ## locales check locales 
+setr LGF_Banking:Getdebug true ## Debug
+setr LGF_Banking:RunSqlTable false ## Run and create SQL table for banking
+setr LGF_Banking:MetadataNPC en ## Language Metadata for Stealed Card -- it , en 
 ```
 
 - Save the file: After making the changes, save and close the server.cfg file.
