@@ -355,7 +355,6 @@ return {
 		label = 'Battery 3D Printer',
 		weight = 1000,
 		stack = true,
-		degrade = 60,
 		description = 'A battery for recharger a Printer 3D'
 	},
 	['tool_hack_cooldown'] = {
@@ -377,7 +376,25 @@ return {
 		client = {
 			export = 'LGF_Banking.ToolCraftingItems',
 		}
-	}
+	},
+	['tool_3dprint_delprinter'] = {
+		label = 'Provider Printer Wipe',
+		weight = 3000,
+		stack = false,
+		description = 'A tool for remove Printer 3D with yur serial.',
+	},
+	['tool_steal_npcmoney'] = {
+		label = 'Provider Steal Money',
+		weight = 3000,
+		stack = false,
+		description = 'A tool for steal money from ped.',
+	},
+	['stealing_card'] = {
+		label = 'Civil Credit Card',
+		weight = 20,
+		stack = false,
+		description = 'A Credit Card Stealed by a civik.',
+	},
 }
 ```
 
