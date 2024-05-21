@@ -26,6 +26,7 @@
 - Enable Camera for Ped
 - Fake Credit Card Configuration
 - Skill Check Support
+- Admin Pannel Printer
 - Initiating a Bank Robbery
 - Robbery Loot Items
 - Society Funds Management (Boss Exclusive)
@@ -112,6 +113,7 @@ setr LGF_Banking:MetadataNPC en ## Language Metadata for Stealed Card -- it , en
 - **TIME heist Restoration**: Optimize time and hack time restore for heists removing cooldown with hack tool
 - **Crafting Tools**: Create tools dedicated to robberies and hacking using the 3D printer
 - **Tools Shop**: Support Shop Items in ox to Buy Tool
+- **Steal NPC**: Credit card clone provider
   
 ### Multi Core Support
 
@@ -266,6 +268,17 @@ setr LGF_Banking:MetadataNPC en ## Language Metadata for Stealed Card -- it , en
     { Label = 'Carabine Rifle', itemHash = 'WEAPON_CARBINERIFLE', ItemRequestedPrint = 'water', ItemRequestedQnt = 5, Description = 'A submachine gun with high fire rate and decent damage.',    CraftingTime = 20, propHash = 'w_ar_carbinerifle' }
 }
 ```
+
+<hr style="border-radius: 50%; margin: 0 25px;">
+
+### Admin Panel Printer
+
+LGF_Banking includes an Admin Panel Printer feature that allows authorized users to manage 3D printers in real-time. This feature is essential for server administrators to control and maintain the printer entities efficiently.
+
+#### Key Features:
+- **Delete Object in Real-Time all sync**: Admins can instantly remove a 3D printer object from the game world.
+- **Delete Object in Real-Time all sync**: Admins can restore a 3D printer object, making it functional again in the game world.
+
 
 
 <hr style="border-radius: 50%; margin: 0 25px;">
