@@ -6,7 +6,7 @@
 - Manage Robbery Bank
 - CoolDown Robbery
 - NPC Robbery System (duplicate card)
-- 3D Printer with Prop (by bzz)
+- 3D Printer with Prop (by Mrs. BzZz)
 - Place Printer with Raycast
 - Battery System for Printer
 - Shop for Tools
