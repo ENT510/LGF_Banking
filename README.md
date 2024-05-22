@@ -44,9 +44,15 @@ Add the following lines to your `server.cfg` file: These settings allow you to s
 ```cfg
 ## Convars LGF Banking
 setr LGF_Banking:Traduction en ## locales check locales 
-setr LGF_Banking:Getdebug true ## Debug
+setr LGF_Banking:Getdebug true ## enable or disable Debug
 setr LGF_Banking:RunSqlTable false ## Run and create SQL table for banking
+setr LGF_Banking:EnableRobberyNpc true ##Enable Stealing NPC and remove Sell Stealing Card
 setr LGF_Banking:MetadataNPC en ## Language Metadata for Stealed Card -- it , en 
+setr LGF_Banking:EnablePrinterMenuCommand true ## Enable o Disable command for printer menu
+setr LGF_Banking:PrinterMenuCommand "printer" ## Command for open Printer Menu
+setr LGF_Banking:EnableAllAtmBlips true ## Enable or Disable all Atm's Blips
+setr LGF_Banking:EnableOxHooksCheck false ## If true, the item cannot be moved from the player's inventory to any stash, etc. (prevent bugs and crafty people)
+setr LGF_Banking:ReturnTypeSerial 1 ## Serial type to generate: 1) generic (letters and numbers), 2) Return letters only, 3) Return numbers only
 ```
 
 - Save the file: After making the changes, save and close the server.cfg file.
