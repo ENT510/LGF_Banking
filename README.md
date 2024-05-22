@@ -1,3 +1,4 @@
+Advanced Banking System with Hacking Provide 
 
 # LGF_Banking
 
@@ -18,7 +19,6 @@
 - Dispatch Custom
 - Support Multi-Core
 - Support Multi-Notification
-- SQL Table Execution and Creation
 - Credit Card Configuration
 - Progress Bar Type
 - Enable Blip for all ATMs
@@ -26,9 +26,9 @@
 - Enable Camera for Ped
 - Fake Credit Card Configuration
 - Skill Check Support
-- Admin Pannel Printer
+- Admin Pannel Printer (Delete / Teleport / Recharge)
 - Initiating a Bank Robbery
-- Robbery Loot Items
+- Bank Robbery Loot Items
 - Society Funds Management (Boss Exclusive)
 - Change PIN
 
