@@ -85,9 +85,11 @@ setr LGF_Banking:ReturnTypeSerial 1 ## Serial type to generate: 1) generic (lett
   </tr>
    <tr>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/5d8f3ae7-8139-48f3-ba15-9719db144c64" alt="Manage Society Found" width="300"/></td>
-
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/5ffa40eb-0a63-4985-98d7-62e494f003ab" alt="Manage Society Found" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/cf696b0f-3899-40c9-9ed2-87cfdc2c2b7e" alt="Manage Society Found" width="300"/></td>
   </tr>
 </table>
+
 
 
 `LGF_Banking` is a comprehensive banking system designed for game servers, offering secure `PIN management`, customizable `credit card creation`, and seamless integration with popular frameworks like `LGF`, `ESX`, and `QB`. Enhance your server's financial interactions with real-time updates and advanced features tailored for an immersive player experience.
@@ -145,10 +147,6 @@ setr LGF_Banking:ReturnTypeSerial 1 ## Serial type to generate: 1) generic (lett
 ### Progress Bar Type
 
 - Type: `CB.TypeProgressBar` (`circle` or `label`)
-
-### Enable Blip for all ATMs
-
-- Enable: `CB.EnableAtmBlip`
 
 ### ATM Prop Models
 
@@ -285,7 +283,11 @@ LGF_Banking includes an Admin Panel Printer feature that allows authorized users
 - **Delete Object in Real-Time all sync**: Admins can instantly remove a 3D printer object from the game world.
 - **Delete Object in Real-Time all sync**: Admins can restore a 3D printer object, making it functional again in the game world.
 
-
+  - **Admin Panel Printer**: `convars`
+    - Printer Data
+      - Get data like name, battery, serial code
+        - Delete Printer for player (if the object is spawned it will be eliminated wherever it is)
+        - Restore Specific Printer
 
 <hr style="border-radius: 50%; margin: 0 25px;">
 
