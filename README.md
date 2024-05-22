@@ -5,7 +5,7 @@
 
 - Manage Robbery Bank
 - CoolDown Robbery
-- NPC Robbery System
+- NPC Robbery System (duplicate card)
 - 3D Printer with Prop (by bzz)
 - Place Printer with Raycast
 - Battery System for Printer
@@ -87,6 +87,10 @@ setr LGF_Banking:ReturnTypeSerial 1 ## Serial type to generate: 1) generic (lett
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/5d8f3ae7-8139-48f3-ba15-9719db144c64" alt="Manage Society Found" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/5ffa40eb-0a63-4985-98d7-62e494f003ab" alt="Manage Society Found" width="300"/></td>
     <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/cf696b0f-3899-40c9-9ed2-87cfdc2c2b7e" alt="Manage Society Found" width="300"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/cec5a6de-4e7a-42f0-8df6-d3367a11a947" alt="Manage Society Found" width="300"/></td>
+    <td><img src="https://github.com/ENT510/LGF_Banking/assets/145626625/5b29c056-5ae6-4852-8a62-5ef69025fe8d" alt="Manage Society Found" width="300"/></td>
   </tr>
 </table>
 
@@ -505,3 +509,20 @@ end)
 ```
 
 - This function allows you to easily update a player's PIN by specifying their `identifier` and the new `PIN`.
+
+# License GPL 3.0
+
+```
+LGF_Banking Version 1.0
+
+LGF_Banking is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+LGF_Banking is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with LGF_Banking. If not, see https://www.gnu.org/licenses/gpl-3.0.html for the full text of the license.
+
+LGF_Banking is based on open-source code and contributions from the community. It was created by ENT510.
+
+Every contribution is welcome and appreciated.
+
+```
