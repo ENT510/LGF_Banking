@@ -5,7 +5,7 @@ local PTFX_DICT <const> = 'core'
 local LOOP_AMOUNT <const> = 600
 local PTFX_DURATION <const> = 30000
 
-
+Printers = {}
 
 function CreateFunction:ParticleFX(entity)
     CreateThread(function()
@@ -199,6 +199,7 @@ CreateFunction.CreatePrinterOnGround = function(data, slot)
                 },
             })
         end
+        Printers[Stampante] = true
     end)
 end
 
@@ -369,6 +370,7 @@ function CreateFunction.Menu3dPrinter(dataitem, itemID)
                     if type(itemData) == "number" and itemData >= 1 then
                         EditableFunction:DeleteBatteryProgress()
                         DeleteEntity(Stampante)
+                        Printers[Stampante] = nil
                         TriggerServerEvent('LegacyBanking:DestroyPrinter', playerid, dataitem.metadata.serial)
                         EditableFunction:SetObjectSpawnStatus(dataitem.metadata.serial, false)
                         EditableFunction:DeleteBattery(dataitem.metadata.serial)

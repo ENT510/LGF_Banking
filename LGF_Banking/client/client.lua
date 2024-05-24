@@ -10,6 +10,8 @@ local Await <const> = Wait
 local MAX_DISTANCE_ALLOWED <const> = CB.StealingNpc.DistanceCancelSteal
 local MIN_DISTANCE_ALLOWED <const> = CB.StealingNpc.DistanceStartAngryorScaried
 
+local bankPeds, fakeShopZones = {}, {}
+
 
 CreateFunction.PedBanking = function(zoneName)
     local promise = promise.new()
@@ -18,7 +20,8 @@ CreateFunction.PedBanking = function(zoneName)
     local pedPos <const> = zone.PedPosBank
     local blipData = zone.BlipData
     if IsModelValid(pedModel) then
-        Ped = CreatePed(4, pedModel, pedPos.x, pedPos.y, pedPos.z - 1, pedPos.w, false, true)
+        local Ped = CreatePed(4, pedModel, pedPos.x, pedPos.y, pedPos.z - 1, pedPos.w, false, true)
+        bankPeds[#bankPeds+1] = Ped
         SetEntityAsMissionEntity(Ped, true, true)
         SetEntityInvincible(Ped, true)
         FreezeEntityPosition(Ped, true)
@@ -470,6 +473,8 @@ CreateFunction.CreateZone = function(zoneName)
     function point:onExit()
         DeletePed(SellerPed)
     end
+
+    return point
 end
 
 CreateFunction.getPinStatus = function()
@@ -780,7 +785,15 @@ end
 
 AddEventHandler('onResourceStop', function(resourceName)
     if GetCurrentResourceName() == resourceName then
-        DeleteEntity(Ped)
+        for _, ped in pairs(bankPeds) do
+            DeleteEntity(ped)
+        end
+        for _, point in pairs(fakeShopZones) do
+            point:remove()
+        end
+        for printer, _ in pairs(Printers) do
+            DeleteEntity(printer)
+        end
         DeleteEntity(SellerPed)
     end
 end)
@@ -793,7 +806,8 @@ for zoneName, zoneData in pairs(CB.BankingZone) do
 end
 
 for k, v in pairs(CB.FakeCreditCard) do
-    CreateFunction.CreateZone(k)
+    local point = CreateFunction.CreateZone(k)
+    fakeShopZones[#fakeShopZones + 1] = point
 end
 
 return CreateFunction
