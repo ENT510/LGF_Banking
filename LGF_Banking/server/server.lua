@@ -489,12 +489,11 @@ RegisterNetEvent('LegacyBanking:BuyToolsInShop', function(playerId, item, quanti
     local src = source
     local ItemCash = 'money'
     local printerItem = 'tool_3dprint'
-    local PlayerName
+    local PlayerName = GetPlayerName(playerId)
 
     if CB.ProviderCore == 'lgf' then
         local playerData = LGF.SvPlayerFunctions.GetPlayerData(src)[1]
         PlayerName = playerData.firstName .. ' ' .. playerData.lastName
-        print('dentro lgf')
     elseif CB.ProviderCore == 'esx' then
         local xPlayer = ESX.GetPlayerFromId(src)
         if xPlayer then
@@ -543,12 +542,12 @@ RegisterNetEvent('LegacyBanking:svSendSyncEffect', function(coords, stampante)
     local playerNearby = lib.getNearbyPlayers(coords, 20, true)
     for _, v in ipairs(playerNearby) do
         TriggerClientEvent('LegacyBanking:SendSyncEffect', v.id, stampante)
-        print(json.encode(v))
+        Shared:GetDebug("svSendSyncEffect", json.encode(v))
     end
 end)
 
 RegisterNetEvent('LegacyBanking:FakeTool:PickUpPrinter', function(serial, description, netid)
-    print('diocane printa ',netid)
+    Shared:GetDebug('diocane printa ',netid)
     local Identifier
     local src = source
     local item = 'tool_3dprint'
@@ -562,6 +561,8 @@ RegisterNetEvent('LegacyBanking:FakeTool:PickUpPrinter', function(serial, descri
     elseif CB.ProviderCore == "qb" then
     end
 
+    if playerIdentifier == nil then print("[^1WARNING^7] No player Identifier cancelling") return end
+
     StampEntity[Identifier] = nil
 
     local entity = NetworkGetEntityFromNetworkId(netid)
@@ -573,14 +574,14 @@ RegisterNetEvent('LegacyBanking:FakeTool:PickUpPrinter', function(serial, descri
 end)
 
 RegisterNetEvent('LegacyBanking:printer:CraftingTools', function(item, quantity, itemrequested)
-    print(item, itemrequested, quantity)
+    Shared:GetDebug("CraftingTools", item, itemrequested, quantity)
     local src = source
     exports.ox_inventory:RemoveItem(src, itemrequested, quantity)
     exports.ox_inventory:AddItem(src, item, 1)
 end)
 
 RegisterNetEvent('LegacyBanking:SendStatusBattery', function(source, serial, batteryStatus, stampante, restore)
-    print(source, serial, batteryStatus, stampante, restore)
+    Shared:GetDebug("SendStatusBattery", source, serial, batteryStatus, stampante, restore)
     local identifier
     if CB.ProviderCore == 'lgf' then
         local playerData = LGF.SvPlayerFunctions.GetPlayerData(source)[1]
@@ -599,7 +600,7 @@ RegisterNetEvent('LegacyBanking:SendStatusBattery', function(source, serial, bat
         StampEntity[identifier] = nil
     end
 
-    print('stampentity', StampEntity[identifier])
+    Shared:GetDebug('stampentity', StampEntity[identifier])
     MySQL.scalar('SELECT COUNT(*) FROM lgf_printer WHERE identifier = ? AND serialNumber = ?', { identifier, serial },
         function(count)
             if count > 0 then

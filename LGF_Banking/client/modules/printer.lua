@@ -95,7 +95,7 @@ CreateFunction.CreatePrinterOnGround = function(data, slot)
     local playerid = cache.serverId
     exports.ox_inventory:useItem(data, function(dataitem)
         if dataitem then
-            print(json.encode(dataitem.name))
+            Shared:GetDebug("dataitem.name", json.encode(dataitem.name))
         end
         local playerPed = cache.ped
         local anim = lib.requestAnimDict("pickup_object", 5000)
@@ -115,7 +115,7 @@ CreateFunction.CreatePrinterOnGround = function(data, slot)
                 SetEntityAsMissionEntity(Stampante, true, true)
                 SetEntityHeading(Stampante, heading)
                 Entity(Stampante).state.Placed = true
-                print(Entity(Stampante).state.Placed)
+                Shared:GetDebug("StateBag of", Stampante, "under key Placed", Entity(Stampante).state.Placed)
                 EditableFunction:CreateBattery(itemID)
                 Wait(100)
                 local batteryStatus = EditableFunction:GetBatteryStatus(itemID)
@@ -141,7 +141,7 @@ CreateFunction.CreatePrinterOnGround = function(data, slot)
                             end
                             TaskPlayAnim(playerPed, anim, "pickup_low", 8.0, 8.0, 1000, 50, 0, false, false, false)
                             Entity(Stampante).state.Placed = false
-                            print(Entity(Stampante).state.Placed)
+                            Shared:GetDebug("StateBag of", Stampante, "under key Placed", Entity(Stampante).state.Placed)
                             Wait(1000)
                             local Stamp2= ObjToNet(Stampante)
                             TriggerServerEvent('LegacyBanking:FakeTool:PickUpPrinter', dataitem.metadata.serial,
@@ -156,7 +156,7 @@ CreateFunction.CreatePrinterOnGround = function(data, slot)
                 print("You can only place the printer with the received serial.")
             end
         else
-            print("No data found in the database. Allowing printer placement.")
+            Shared:GetDebug("No data found in the database. Allowing printer placement.")
             local itemID = dataitem.metadata.serial
             Stampante = CreateObjectNoOffset(model, stamposition.x, stamposition.y, stamposition.z, false, true )
             NetworkRegisterEntityAsNetworked(Stampante)
@@ -235,7 +235,7 @@ end
 
 
 function CreateFunction.OpenPrinterData(printer)
-    print('printer data', printer)
+    Shared:GetDebug('printer data', printer)
     local printerOptions = {
         {
             title = Shared:GetKeyTraduction('ReloadPrinterMenu'),
@@ -259,7 +259,7 @@ function CreateFunction.OpenPrinterData(printer)
             icon = "fa-solid fa-trash-alt",
             onSelect = function()
                 local netId = printer.netId
-                print(netId)
+                Shared:GetDebug("netId", netId)
                 TriggerServerEvent('LegacyBanking:DestroyPrinterMenu', netId, printer.identifier, printer.serialNumber)
             end
         },
@@ -413,7 +413,7 @@ function CreateFunction.Menu3dPrinterItem()
                     TriggerServerEvent('LegacyBanking:printer:CraftingTools', item.itemHash, item.ItemRequestedQnt,
                         item.ItemRequestedPrint)
                 else
-                    print('Not enough required item in inventory')
+                    Shared:GetDebug('Not enough required item in inventory')
                 end
             end
         })

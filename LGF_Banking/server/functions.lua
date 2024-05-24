@@ -69,7 +69,7 @@ function SvEditableFunction:CreateSerialNumber()
     local length = 9
     local characters = ""
     local returnTypeSerial = GetConvarInt("LGF_Banking:ReturnTypeSerial", 2)
-    print(returnTypeSerial)
+    Shared:GetDebug("CreateSerialNumber", returnTypeSerial)
 
     if returnTypeSerial ~= 1 and returnTypeSerial ~= 2 and returnTypeSerial ~= 3 then
         returnTypeSerial = 1

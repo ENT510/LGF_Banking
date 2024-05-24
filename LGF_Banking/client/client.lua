@@ -201,7 +201,7 @@ CreateFunction.CreateMenuBank = function(zoneBank)
         DataJob = {
             job = PlayerJob, grade = PlayerGrade
         }
-        print('job dentro provider', PlayerJob)
+        Shared:GetDebug('job dentro provider', PlayerJob)
     elseif CB.ProviderCore == 'esx' then
         BankAccount = json.encode(PlayerBankData)
         local xPlayer = ESX.GetPlayerData()
@@ -303,7 +303,7 @@ CreateFunction.CreateMenuBank = function(zoneBank)
         local societyFound
         local societyName
         local SocietyData = lib.callback.await('LegacyBanking:GetSocietyFound', false)
-        print(json.encode(SocietyData, { indent = true }))
+        Shared:GetDebug("SocietyData", json.encode(SocietyData, { indent = true }))
         if CB.ProviderCore == 'lgf' then
             societyFound = SocietyData.founds
             societyName = SocietyData.name

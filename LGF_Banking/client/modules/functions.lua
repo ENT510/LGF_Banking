@@ -25,7 +25,7 @@ end
 
 function EditableFunction:ClientNotification(msg, title, icon)
     PlaySound(-1, "Event_Message_Purple", "GTAO_FM_Events_Soundset")
-    print(msg, title, icon)
+    Shared:GetDebug("ClientNotification", msg, title, icon)
     if CB.ProviderNotify == 'lgf' then
         LGF.Utils.AdvancedNotify({
             icon = icon,
@@ -201,7 +201,7 @@ function EditableFunction:CreateBattery(itemID)
     end
 
     batteryStatusMap[itemID] = baseBatteryStatus
-    print("Object Placed " .. itemID .. ": " .. batteryStatusMap[itemID])
+    Shared:GetDebug("Object Placed " .. itemID .. ": " .. batteryStatusMap[itemID])
     local DurationBattery = CB.DurationBattery * 1000
     Citizen.CreateThread(function()
         while batteryStatusMap[itemID] and type(batteryStatusMap[itemID]) == "number" and batteryStatusMap[itemID] > 0 do
@@ -247,7 +247,7 @@ end
 function EditableFunction:DeleteBattery(itemID)
     if batteryStatusMap[itemID] ~= nil then
         batteryStatusMap[itemID] = nil
-        print("Battery with ID " .. itemID .. " deleted successfully.")
+        Shared:GetDebug("Battery with ID " .. itemID .. " deleted successfully.")
     else
         warn("Battery with ID " .. itemID .. " does not exist.")
     end
@@ -262,7 +262,7 @@ function EditableFunction:GetBatteryStatusByDb()
             battery = firstData.batteryStatus,
             identifier = firstData.identifier,
         }
-        print(json.encode(ItemData))
+        Shared:GetDebug("ItemData", json.encode(ItemData))
         return ItemData
     else
         warn("Battery status data is empty. Generating random battery status.")
@@ -272,7 +272,7 @@ function EditableFunction:GetBatteryStatusByDb()
             battery = randomBatteryStatus,
             identifier = "randomIdentifier",
         }
-        print(json.encode(randomItemData))
+        Shared:GetDebug("randomItemData", json.encode(randomItemData))
         return randomItemData
     end
 end
@@ -333,7 +333,7 @@ function EditableFunction:RestoredBatteryPrinter(itemID)
     EditableFunction:ProgressHackingCoolDown('Recharging Battery', 20000)
     batteryStatusMap[itemID] = 100
 
-    print("Batteria per l'oggetto con ID", itemID, "ripristinata al 100%.")
+    Shared:GetDebug("Batteria per l'oggetto con ID", itemID, "ripristinata al 100%.")
 end
 
 function EditableFunction:SetBatteryStatus(itemID , percentuale)
@@ -345,7 +345,7 @@ function EditableFunction:SetBatteryStatus(itemID , percentuale)
     -- EditableFunction:ProgressHackingCoolDown('Recharging Battery', 20000)
     batteryStatusMap[itemID] = percentuale
 
-    print("Batteria per l'oggetto con ID", itemID, "ripristinata al" .. ' ' ..percentuale)
+    Shared:GetDebug("Batteria per l'oggetto con ID", itemID, "ripristinata al" .. ' ' ..percentuale)
 end
 
 function EditableFunction:DestroyCamera()
