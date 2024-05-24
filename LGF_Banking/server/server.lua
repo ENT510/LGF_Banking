@@ -1,6 +1,6 @@
 ---@diagnostic disable: need-check-nil, undefined-field, missing-parameter
 
-if not lib.checkDependency('ox_lib', '3.21.0', true) or not lib.checkDependency('ox_inventory', '2.40.0', true) then
+if not lib.checkDependency('ox_lib', '3.21.0', true) then
     return warn('Obsolete Version, Download Latest versions for a safe approach')
 end
 
@@ -857,12 +857,13 @@ SqlBankingData = function()
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 identifier VARCHAR(255) NOT NULL,
                 pin VARCHAR(255) NOT NULL,
-                last_updated INT NOT NULL
+                last_updated DATETIME NOT NULL
             );
         ]])
         Shared:GetDebug("The [^4lgf_banking^7] table has been created correctly")
     end
 end
+
 
 SqlPrinterData = function()
     local result = MySQL.query.await('SHOW TABLES LIKE ?', { 'lgf_printer' })
