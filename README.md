@@ -102,7 +102,7 @@ setr LGF_Banking:ReturnTypeSerial 1 ## Serial type to generate: 1) generic (lett
 
 - [x] **LGF_CORE**
 - [x] **ESX**
-- [x] **QB**
+- [x] **QB (work in progress)**
 
 # Support Resources
 
