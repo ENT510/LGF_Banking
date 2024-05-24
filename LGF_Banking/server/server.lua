@@ -561,7 +561,7 @@ RegisterNetEvent('LegacyBanking:FakeTool:PickUpPrinter', function(serial, descri
     elseif CB.ProviderCore == "qb" then
     end
 
-    if playerIdentifier == nil then print("[^1WARNING^7] No player Identifier cancelling") return end
+    if Identifier == nil then print("[^1WARNING^7] No player Identifier cancelling") return end
 
     StampEntity[Identifier] = nil
 
