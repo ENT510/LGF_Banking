@@ -555,11 +555,15 @@ RegisterNetEvent('LegacyBanking:FakeTool:PickUpPrinter', function(serial, descri
     exports.ox_inventory:AddItem(src, item, 1, { serial = serial, description = description })
     if CB.ProviderCore == 'lgf' then
         local Player = LGF.SvPlayerFunctions.GetPlayerData(src)[1]
-        local identifier = Player.charName
-        Identifier = identifier
+        Identifier = Player.charName
+    elseif CB.ProviderCore == "esx" then
+        local PlayerData = ESX.GetPlayerFromId(src)
+        Identifier = PlayerData.identifier
+    elseif CB.ProviderCore == "qb" then
     end
+
     StampEntity[Identifier] = nil
-    
+
     local entity = NetworkGetEntityFromNetworkId(netid)
     if DoesEntityExist(entity) then
         DeleteEntity(entity)
@@ -618,7 +622,14 @@ lib.callback.register('LegacyBanking:GetStatusBatteryDb', function(playerid)
     if CB.ProviderCore == 'lgf' then
         local PlayerData = LGF.SvPlayerFunctions.GetPlayerData(playerid)[1]
         playerIdentifier = PlayerData.charName
+    elseif CB.ProviderCore == "esx" then
+        local PlayerData = ESX.GetPlayerFromId(playerid)
+        playerIdentifier = PlayerData.identifier
+    elseif CB.ProviderCore == "qb" then
     end
+
+    if playerIdentifier == nil then print("[^1WARNING^7] No player Identifier cancelling") return end
+
     local query = MySQL.Sync.fetchAll(
         'SELECT serialNumber, batteryStatus, identifier FROM lgf_printer WHERE identifier = ?', { playerIdentifier })
 
