@@ -14,23 +14,15 @@ Advanced Banking System with Hacking Provide
 - Support ATMs
 - Create Fake Card with metadata
 - Hacking Time for Robbery
-- Hack Pin
+- Hack Pin missed
 - Dispatch Internal
 - Dispatch Custom
 - Support Multi-Core
 - Support Multi-Notification
-- Credit Card Configuration
 - Progress Bar Type
-- Enable Blip for all ATMs
-- Bank Zones and Configuration
-- Enable Camera for Ped
-- Fake Credit Card Configuration
-- Skill Check Support
+- Skillcheck type
 - Admin Pannel Printer (Delete / Teleport / Recharge)
-- Initiating a Bank Robbery
-- Bank Robbery Loot Items
 - Society Funds Management (Boss Exclusive)
-- Change PIN
 
 
 ## Configuratiom (Convars)
