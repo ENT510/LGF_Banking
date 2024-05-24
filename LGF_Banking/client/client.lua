@@ -203,7 +203,7 @@ CreateFunction.CreateMenuBank = function(zoneBank)
         }
         print('job dentro provider', PlayerJob)
     elseif CB.ProviderCore == 'esx' then
-        BankAccount = json.encode(PlayerBankData.Account)
+        BankAccount = json.encode(PlayerBankData)
         local xPlayer = ESX.GetPlayerData()
         PlayerJob = xPlayer and xPlayer.job.name
         PlayerGrade = xPlayer and xPlayer.job.grade
