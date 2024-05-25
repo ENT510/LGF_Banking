@@ -1,7 +1,7 @@
 ---@diagnostic disable: need-check-nil, undefined-field, missing-parameter
 
 if not lib.checkDependency('ox_lib', '3.21.0', true) then
-    return warn('Obsolete Version, Download Latest versions for a safe approach')
+    return warn('Download Latest versions for a safe approach')
 end
 
 local LGF = GetResourceState('LegacyFramework'):find('start') and exports['LegacyFramework']:ReturnFramework() or nil
