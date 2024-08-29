@@ -2,8 +2,6 @@ Advanced Banking System with Hacking Provide
 
 # LGF_Banking
 
-  ![](https://img.shields.io/github/downloads/ENT510/LGF_Banking/total?logo=github)
-
 ### Provide Functions:
 
 - Manage Robbery Bank
